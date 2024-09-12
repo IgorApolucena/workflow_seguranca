@@ -1,0 +1,31 @@
+name: Test Python Application
+
+on: [push, pull_request]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Check out the repository
+      uses: actions/checkout@v3
+
+    - name: Set up Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.x'
+
+    - name: Test addition
+      run: echo -e "5\n+\n3" | python main.py
+
+    - name: Test subtraction
+      run: echo -e "10\n-\n4" | python main.py
+
+    - name: Test multiplication
+      run: echo -e "6\n*\n2" | python main.py
+
+    - name: Test division
+      run: echo -e "8\n/\n2" | python main.py
+
+    - name: Test division by zero
+      run: echo -e "8\n/\n0" | python main.py
