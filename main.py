@@ -1,18 +1,22 @@
-# Risco Pedido
+print("(1)Dp. D.S \n (2)Dp. Marketing \n (3)Dp. Recursos Humanos \n (4)Dp. Pesquisa e Desenvolvimento")
+print()
 
-val = dias = 0
+dp = str(input("Qual é o seu Dp?: "))
+op = ["1","2","3","4"]
 
-def pedido(val,dias):
-    val = float(input("Digite o valor do pedido: "))
-    dias = int(input("Digite os dias para entrega: "))
+while (dp not in op):
+    print()
+    print("Opção errada! Digite novamente")
+    print()
+    print("(1)Dp. D.S \n (2)Dp. Marketing \n (3)Dp. Recursos Humanos \n (4)Dp. Pesquisa e Desenvolvimento")
+    print()
+    dp = str(input("Qual é o seu Dp?: "))
 
-    if (val < 100) or (dias > 7 ):
-        print("Entrega normal")
-    elif(val >= 100 and val <= 500) or (dias >= 4 and dias <= 7):
-        print("Entrega prioritária")
-    elif (val > 500) or (dias <= 4):
-        print("Entrega urgente")
-    else:
-        print("Opção Inválida!")
-
-pedido(val,dias)
+if (dp == "1"):
+    print("Seu DP precisa de Laptops com alto desempenho")
+elif (dp == "2"):
+    print("Seu DP precisa de Tablets")
+elif (dp == "3"):
+    print("Seu DP precisa de DeskTops")
+else:
+    print("Seu DP precisa de equipamentos de última geração")
